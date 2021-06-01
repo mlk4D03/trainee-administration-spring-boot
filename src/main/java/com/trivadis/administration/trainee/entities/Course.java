@@ -4,10 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -21,5 +20,14 @@ public class Course {
 
     @Column(length = 25)
     private String name;
+
+    @OneToMany(mappedBy = "course")
+    private List<Module> modules = new ArrayList<>();
+
+    @OneToOne
+    private Year year;
+
+    @OneToMany(mappedBy = "course")
+    private List<Trainee> trainees;
 
 }

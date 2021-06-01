@@ -5,25 +5,32 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Module {
+public class Schedule {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    private String name;
+    private LocalDate start;
 
-    private int durationInWeeks;
+    private LocalDate end;
 
-    @OneToMany(mappedBy = "module")
-    private List<Lecture> lectures;
+    @OneToOne
+    private Lecture lecture;
 
     @ManyToOne
-    private Course course;
+    private Tutor tutor;
+
+    @ManyToOne
+    private Room room;
+
+    @OneToMany
+    private List<Trainee> trainees;
 }
