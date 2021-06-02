@@ -28,6 +28,6 @@ public class Course {
     private Year year;
 
     @OneToMany(mappedBy = "course")
-    private List<Trainee> trainees;
+    private List<Trainee> trainees = new ArrayList<>();
 
 }

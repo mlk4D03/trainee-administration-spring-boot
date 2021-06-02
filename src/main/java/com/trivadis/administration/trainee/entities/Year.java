@@ -19,6 +19,6 @@ public class Year {
     @GeneratedValue
     private Long id;
 
-    @Column(length = 4, unique = true)
+    @Column(length = 6, unique = true)
     private String year;
 }

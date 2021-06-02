@@ -21,7 +21,7 @@ public class Module {
 
     private int durationInWeeks;
 
-    @OneToMany(mappedBy = "module")
+    @OneToMany(mappedBy = "module", fetch = FetchType.EAGER)
     private List<Lecture> lectures;
 
     @ManyToOne
