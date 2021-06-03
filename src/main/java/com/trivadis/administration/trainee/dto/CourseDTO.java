@@ -1,6 +1,5 @@
 package com.trivadis.administration.trainee.dto;
 
-import com.trivadis.administration.trainee.entities.Year;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
