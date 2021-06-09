@@ -29,7 +29,7 @@ public class LectureController {
     public Iterable<LectureDTO> getAllLectures() {
         Collection<Lecture> lecture = (Collection<Lecture>) this.lectureService.getAllLectures();
 
-        return lecture.stream().map(l -> toLectureDTO(l)).collect(Collectors.toList());
+        return lecture.stream().map(this::toLectureDTO).collect(Collectors.toList());
     }
 
     @GetMapping("/{lectureId}")
@@ -44,9 +44,12 @@ public class LectureController {
     private LectureDTO toLectureDTO(Lecture lecture) {
         LectureDTO lectureDTO = new LectureDTO();
         lectureDTO.setId(lecture.getId());
-        lectureDTO.setDiscription(lecture.getDiscription());
-        if(lecture.getModule() != null) {
+        lectureDTO.setDiscription(lecture.getDescription());
+        if (lecture.getModule() != null) {
             lectureDTO.setModule(lecture.getModule().getId());
+        }
+        if (lecture.getTutor() != null) {
+            lectureDTO.setTutor(lecture.getTutor().getId());
         }
         lectureDTO.setName(lecture.getName());
 

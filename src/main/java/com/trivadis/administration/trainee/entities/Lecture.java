@@ -19,8 +19,11 @@ public class Lecture {
     @Column(length = 25)
     private String name;
 
-    private String discription;
+    private String description;
 
     @ManyToOne
     private Module module;
+
+    @ManyToOne
+    private Tutor tutor;
 }

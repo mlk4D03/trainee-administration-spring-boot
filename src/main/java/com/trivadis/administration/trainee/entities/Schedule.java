@@ -26,11 +26,5 @@ public class Schedule {
     private Lecture lecture;
 
     @ManyToOne
-    private Tutor tutor;
-
-    @ManyToOne
     private Room room;
-
-    @OneToMany
-    private List<Trainee> trainees;
 }

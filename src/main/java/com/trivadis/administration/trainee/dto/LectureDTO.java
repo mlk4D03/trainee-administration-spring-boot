@@ -14,4 +14,6 @@ public class LectureDTO {
     private String discription;
 
     private Long module;
+
+    private Long tutor;
 }

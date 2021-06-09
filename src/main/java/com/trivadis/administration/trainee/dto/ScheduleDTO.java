@@ -20,9 +20,6 @@ public class ScheduleDTO {
 
     private Long lecture;
 
-    private Long tutor;
-
     private Long room;
 
-    private List<Long> trainees;
 }

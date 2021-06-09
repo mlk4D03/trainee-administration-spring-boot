@@ -2,9 +2,7 @@ package com.trivadis.administration.trainee.service;
 
 import com.trivadis.administration.trainee.dto.LectureDTO;
 import com.trivadis.administration.trainee.entities.Lecture;
-import com.trivadis.administration.trainee.entities.Module;
 import com.trivadis.administration.trainee.repository.LectureRepository;
-import com.trivadis.administration.trainee.repository.ModuleRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -23,7 +21,7 @@ public class LectureService {
 
     public Lecture saveLecture(LectureDTO lectureDTO) {
         Lecture lecture = new Lecture();
-        lecture.setDiscription(lectureDTO.getDiscription());
+        lecture.setDescription(lectureDTO.getDiscription());
         lecture.setName(lectureDTO.getName());
         return this.lectureRepository.save(lecture);
     }
